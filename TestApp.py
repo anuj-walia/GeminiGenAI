@@ -7,6 +7,7 @@ print(GOOGLE_API_KEY)
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-1.5-flash')
 sample_file = genai.upload_file(path="EdgarTD.html",
+
                                 display_name="EdgarTDTest.html")
 
 # print(f"Uploaded file '{sample_file.display_name}' as: {sample_file.uri}")
