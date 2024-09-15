@@ -21,12 +21,14 @@ sample_file = genai.upload_file(path="EdgarTD.html",
 
 response_with_uploaded_docs = model.generate_content(["As a structured Notes trader, find all indicative financial "
                                                 "data for the newly issued structured note mentioned "
-                                                 "in the given document and write in csv format",
+                                                 "in the given document and write in csv format with pipe(|) delimiter and  with headers."
+                                                      "Extract all fields which can help you build indicative data repository to do a market analysis and "
+                                                      "help you price your offerings better",
                                                  sample_file,sample_file,sample_file])
 
 response_with_passing_doc_content= model.generate_content("As a structured Notes trader, find all indicative financial "
                                                 "data for the newly issued structured note mentioned "
-                                                 "in the given document and write in csv format")
+                                                 "in the given document and write in csv format with pipe(|) delimiter and  with headers")
 print(response_with_uploaded_docs.text)
 print(response_with_uploaded_docs.text)
 
