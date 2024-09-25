@@ -32,7 +32,7 @@ def download(url:str):
         response = requests.get(url, headers=headers,verify=False)
         response.raise_for_status()
 
-        f=open(f'downloads/Anuj/{downloaded_file_name}', 'wb')
+        f=open(f'downloads/vignesh/{downloaded_file_name}', 'wb')
         f.write(response.content)
         f.close()
         PROCESSED_RECORDS_LOG.write(downloaded_file_name+"\n")
@@ -63,7 +63,8 @@ def validate_data_frame(dataframe:pd.DataFrame):
     return False
 
 def main():
-    metadata_df=read_metadata_file('data/Anuj_Metadata.csv')
+    # metadata_df=read_metadata_file('data/Anuj_Metadata.csv')
+    metadata_df=read_metadata_file('/Users/anujwalia/PycharmProjects/snotesproject/424filenames.csv')
     if validate_data_frame(metadata_df):
         metadata_df.rename(columns={metadata_df.columns[0]: "cik"}, inplace=True)
         metadata_df.rename(columns={metadata_df.columns[1]: "some_identifier"}, inplace=True)
